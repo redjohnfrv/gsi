@@ -1,0 +1,10 @@
+.MuiContainer-root {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  min-height: calc(100vh - 50px);
+  margin-top: 25px;
+  background-color: #73b2d2;
+  box-shadow: -15px 15px 0 0 rgba(83, 83, 83, 0.42);
+}
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,148 @@
+$font-title: #343434;
+$font-priority: #005161;
+
+//paimon
+.paimon-box {
+  width: 150px;
+  height: 150px;
+
+  position: absolute;
+  left: calc(100% - 150px);
+  cursor: pointer;
+}
+.paimon {
+  width: 100%;
+  height: 100%;
+  background: url(./../../images/paimon.png) center/contain no-repeat;
+
+  &:hover {
+    @keyframes shake {
+      from {
+        transform: translateY(0) rotate(0deg)
+      }
+      to {
+        transform: translateY(5px) rotate(5deg)
+      }
+    }
+    animation: .1s linear shake both;
+  }
+
+  &:hover + .hint {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.hint {
+  max-width: 150px;
+  padding: 5px 5px 5px 12px;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s ease;
+
+  position: absolute;
+  left: -165px;
+  top: 25px;
+
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 15px;
+
+  font-size: 1rem;
+  color: #000;
+
+  &:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+
+    position: absolute;
+    right: -11px;
+    top: 50%;
+
+    transform: rotate(45deg);
+
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    background-color: #fff;
+  }
+}
+
+//HEADER
+
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  height: 350px;
+  padding: 25px;
+  margin: 0 auto;
+
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.title {
+  max-width: 200px;
+
+  &__name {
+    letter-spacing: 1px;
+    font-size: 24px;
+    color: $font-title;
+  }
+  &__avatar {
+    width: 100%;
+    & img {
+      width: 100%;
+      height: auto;
+      box-shadow: -5px 5px 0px 0px rgba(83, 83, 83, 0.42);
+    }
+  }
+}
+
+//SUBINFO
+
+.subinfo {
+  height: calc(100% - 55px);
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+//PRIORITY
+
+.priority {
+  width: 100%;
+  padding-left: 25px;
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__text {
+    margin-right: 15px;
+
+    font-size: 20px;
+    line-height: 50px;
+    color: $font-priority;
+  }
+  &__mark {
+    width: 50px;
+    height: 50px;
+    @keyframes spin {
+      from { transform: rotate(0deg) }
+      to { transform: rotate(360deg) }
+    }
+    animation: 10s linear spin infinite;
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

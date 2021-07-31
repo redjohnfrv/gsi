@@ -1,5 +1,6 @@
 .MuiContainer-root {
+  box-sizing: border-box;
   background-color: azure;
-  min-height: calc(100vh - 25px);
+  min-height: calc(100vh - 50px);
   margin-top: 25px;
 }
