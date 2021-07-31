@@ -5,4 +5,11 @@ $font-priority: #005161;
   & input {
     color: #005161;
   }
+  &__textFiled label {
+    color: #005161 !important;
+  }
+}
+
+.MuiInput-underline:after {
+  border-bottom: 2px solid #005161 !important;
 }
