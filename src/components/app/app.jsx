@@ -4,6 +4,7 @@ import './app.css';
 import {Header} from './../header/header';
 import {Filter} from './../filter/filter';
 import {Posts} from './../posts/posts';
+import {AddPost} from './../add/add';
 
 export function App() {
     return (
@@ -11,6 +12,7 @@ export function App() {
             <Header />
             <Filter />
             <Posts />
+            <AddPost />
         </Container>
     );
 }

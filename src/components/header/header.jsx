@@ -29,7 +29,7 @@ export function Header() {
             <div className="subinfo">
                 <div className="priority">
                     <div className="priority__content">
-                        <span className="priority__text urgent-text">Create the App</span>
+                        <span className="priority__text urgent-text">Create the App! Create the App! Create the App! Create the App! Create the App! Create the App!</span>
                         <div className="mark priority__mark">
                             <img src={priorityMark} alt="main goal" draggable="false" />
                         </div>

@@ -1,0 +1,10 @@
+.add {
+  width: 100%;
+}
+.add__btn {
+  width: max-content !important;
+  color: #fff !important;
+  margin: 0 !important;
+}
+
+/*# sourceMappingURL=add.css.map */
