@@ -98,7 +98,8 @@
 }
 
 .priority {
-  width: 65%;
+  max-width: 65%;
+  width: max-content;
   padding-left: 25px;
 }
 .priority__content {

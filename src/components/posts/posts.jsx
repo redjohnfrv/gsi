@@ -18,10 +18,16 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export function Posts({posts}) {
+export function Posts({posts, deletePost}) {
 
     const classes = useStyles();
-    const postsArray = posts.map( post => <Post {...post} key={post.id}/> )
+    const postsArray = posts.map( post => {
+        const {id, ...rest} = post;
+        return <Post
+            {...rest}
+            key={id}
+            deletePost={(event) => deletePost(id, event) } />
+    });
 
     return (
         <div className={classes.root}>

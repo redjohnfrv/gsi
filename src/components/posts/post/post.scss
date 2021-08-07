@@ -1,5 +1,10 @@
 $hover-bg: #dae7ee;
 
+svg.star {
+  transition: .5s ease;
+  cursor: pointer;
+}
+
 .star_filled {
   background-color: #ffec83;
   border-radius: 50%;
@@ -12,6 +17,7 @@ $hover-bg: #dae7ee;
 
 .delete {
   margin-left: 12.5px;
+  cursor: grab;
 }
 
 .post {
