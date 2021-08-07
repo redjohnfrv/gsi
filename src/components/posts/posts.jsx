@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 export function Posts({posts}) {
 
     const classes = useStyles();
-    const postsArray = posts.map( post => <Post {...post} /> );
+    const postsArray = posts.map( post => <Post {...post} key={post.id}/> )
 
     return (
         <div className={classes.root}>
