@@ -26,7 +26,7 @@ export function Posts({posts, deletePost}) {
         return <Post
             {...rest}
             key={id}
-            deletePost={(event) => deletePost(id, event) } />
+            deletePost={() => deletePost(id) } />
     });
 
     return (
