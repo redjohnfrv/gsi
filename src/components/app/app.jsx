@@ -9,9 +9,9 @@ import {AddPost} from './../add/add';
 export function App() {
 
     const data = [
-        {id: 1, label: "Create the App", important: false},
-        {id: 2, label: "Create the App post 2", important: false},
-        {id: 3, label: "Create the App post 3", important: true},
+        {id: Math.random(), label: "Create the App", important: false},
+        {id: Math.random(), label: "Create the App post 2", important: false},
+        {id: Math.random(), label: "Create the App post 3", important: true},
     ]
 
     return (
