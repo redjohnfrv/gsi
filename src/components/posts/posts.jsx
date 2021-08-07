@@ -2,7 +2,7 @@ import React from 'react';
 import './posts.css';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import { Post } from "./post/post"
+import { Post } from "./post/post";
 
 // const dateNow = new Date().toJSON().slice(0,10).replace(/-/g,'/')
 

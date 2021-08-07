@@ -5,23 +5,20 @@ import {Header} from './../header/header';
 import {Filter} from './../filter/filter';
 import {Posts} from './../posts/posts';
 import {AddPost} from './../add/add';
-import state from './../../state/state'
+import state from './../../state/state';
 
 export function App() {
 
-    const data = state
+    let data = state;
 
-    let [cloneData, setCloneData] = useState(data)
+    let [cloneData, setCloneData] = useState(data);
 
     const deletePost = id => {
-        cloneData.forEach(item => {
-            if (item.id === id) {
-                const newData = [...cloneData]
-                newData.splice(item, 1)
-                setCloneData(newData)
-            }
-        })
-    }
+        data = [...cloneData];
+        const index = cloneData.findIndex(elem => elem.id === id);
+        data.splice(index, 1)
+        setCloneData(data)
+    };
 
     return (
         <Container maxWidth="md">
@@ -33,5 +30,5 @@ export function App() {
             <AddPost />
         </Container>
     );
-}
+};
 
