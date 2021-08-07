@@ -9,13 +9,17 @@ import StarBorder from '@material-ui/icons/StarBorder';
 // const dateNow = new Date().toJSON().slice(0,10).replace(/-/g,'/')
 
 
-export function Post() {
+export function Post(props) {
+
+    const { label, id, important } = props
+    const classlist = important ? "star star_filled" : "star"
+
 
     return (
         <div>
-            <ListItem>
-                <ListItemText primary="Task 1" className="text" />
-                <StarBorder className="star" />
+            <ListItem key={id} >
+                <ListItemText primary={label} className="text"  />
+                <StarBorder className={classlist} />
                 <DeleteIcon className="delete" />
             </ListItem>
             <Divider />

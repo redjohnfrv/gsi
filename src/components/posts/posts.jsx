@@ -24,10 +24,10 @@ export function Posts() {
     return (
         <div className={classes.root}>
             <List component="nav" className={classes.padding}>
-                <Post />
-                <Post />
-                <Post />
-                <Post />
+                <Post label="task 1" id="1" important />
+                <Post label="task 2" id="1" />
+                <Post label="task 3" id="1" />
+                <Post label="task 4" id="1" />
             </List>
         </div>
     );
