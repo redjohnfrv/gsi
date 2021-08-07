@@ -7,11 +7,18 @@ import {Posts} from './../posts/posts';
 import {AddPost} from './../add/add';
 
 export function App() {
+
+    const data = [
+        {id: 1, label: "Create the App", important: false},
+        {id: 2, label: "Create the App post 2", important: false},
+        {id: 3, label: "Create the App post 3", important: true},
+    ]
+
     return (
         <Container maxWidth="md">
             <Header />
             <Filter />
-            <Posts />
+            <Posts posts={data} />
             <AddPost />
         </Container>
     );

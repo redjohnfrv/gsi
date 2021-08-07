@@ -18,16 +18,15 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export function Posts() {
+export function Posts({posts}) {
+
     const classes = useStyles();
+    const postsArray = posts.map( post => <Post {...post} /> );
 
     return (
         <div className={classes.root}>
             <List component="nav" className={classes.padding}>
-                <Post label="task 1" id="1" important />
-                <Post label="task 2" id="1" />
-                <Post label="task 3" id="1" />
-                <Post label="task 4" id="1" />
+                {postsArray}
             </List>
         </div>
     );

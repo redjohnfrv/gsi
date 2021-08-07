@@ -1,3 +1,5 @@
+$hover-bg: #dae7ee;
+
 .star_filled {
   background-color: #ffec83;
   border-radius: 50%;
@@ -10,4 +12,12 @@
 
 .delete {
   margin-left: 12.5px;
+}
+
+.post {
+  transition: all .3s ease-in;
+}
+
+.post:hover {
+  background-color: $hover-bg;
 }

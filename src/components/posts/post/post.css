@@ -12,4 +12,12 @@
   margin-left: 12.5px;
 }
 
+.post {
+  transition: all 0.3s ease-in;
+}
+
+.post:hover {
+  background-color: #dae7ee;
+}
+
 /*# sourceMappingURL=post.css.map */
