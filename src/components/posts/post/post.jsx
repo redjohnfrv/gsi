@@ -10,23 +10,18 @@ import StarBorder from '@material-ui/icons/StarBorder';
 
 
 export function Post(props) {
-    const {label, important} = props;
-    let [isImportant, setIsImportant] = useState(important);
-    let classlist = isImportant ? "star star_filled" : "star";
-
-    const urgentPost = () => {
-        setIsImportant(!isImportant)
-    }
+    const {label, important, deletePost, urgentPost} = props;
+    let classlist = important ? "star star_filled" : "star";
 
     return (
         <div className="post">
             <ListItem>
-                <ListItemText primary={label} className="text"  />
+                <ListItemText primary={ label } className="text"  />
                 <StarBorder
-                    onClick={urgentPost}
-                    className={classlist} />
+                    onClick={ urgentPost }
+                    className={ classlist } />
                 <DeleteIcon
-                    onClick={props.deletePost}
+                    onClick={ deletePost }
                     className="delete" />
             </ListItem>
             <Divider />

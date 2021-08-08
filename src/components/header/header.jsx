@@ -6,7 +6,7 @@ import priorityMark from './../../images/priorityMark.png';
 
 import { Search } from "./search/search";
 
-export function Header() {
+export function Header( { urgents, tasks } ) {
     return (
         <header className="header">
             <div className="paimon-box">
@@ -35,8 +35,8 @@ export function Header() {
                         </div>
                     </div>
                     <div className="priority__subinfo">
-                        <span className="priority__text">Current tasks: <span>0</span></span>
-                        <span className="priority__text">Urgent: <span>0</span></span>
+                        <span className="priority__text">Current tasks: <span> { tasks } </span></span>
+                        <span className="priority__text">Urgent: <span> { urgents } </span></span>
                     </div>
                 </div>
                 <div>

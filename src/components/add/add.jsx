@@ -14,15 +14,25 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export function AddPost() {
+export function AddPost( {addPost, inputChange, value} ) {
     const classes = useStyles();
+    const btnTitle = 'New post'
 
     return (
         <div className="add">
             <form className={classes.root} noValidate autoComplete="off">
-                <Input placeholder="Write your task..." inputProps={{ 'aria-label': 'description' }} />
-                <Button className="add__btn" variant="contained" color="primary">
-                    New post
+                <Input
+                    placeholder="Write your task..."
+                    inputProps={{ 'aria-label': 'description' }}
+                    value={ value }
+                    onChange={ (e) => inputChange(e) }/>
+                <Button
+                    className="add__btn"
+                    variant="contained"
+                    color="primary"
+                    onClick={ () => addPost(value) }>
+
+                    { btnTitle }
                 </Button>
             </form>
         </div>

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export function Posts({posts, deletePost}) {
+export function Posts( {posts, deletePost, urgentPost} ) {
 
     const classes = useStyles();
     const postsArray = posts.map( post => {
@@ -26,7 +26,8 @@ export function Posts({posts, deletePost}) {
         return <Post
             {...rest}
             key={id}
-            deletePost={() => deletePost(id) } />
+            deletePost={() => deletePost(id) }
+            urgentPost={() => urgentPost(id) } />
     });
 
     return (
