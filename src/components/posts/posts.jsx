@@ -18,22 +18,23 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export function Posts( {posts, deletePost, urgentPost} ) {
+export function Posts( { posts, deletePost, urgentPost, setNewTitle } ) {
 
     const classes = useStyles();
     const postsArray = posts.map( post => {
-        const {id, ...rest} = post;
+        const { id, ...rest } = post;
         return <Post
-            {...rest}
-            key={id}
-            deletePost={() => deletePost(id) }
-            urgentPost={() => urgentPost(id) } />
+            { ...rest }
+            key={ id }
+            deletePost={ () => deletePost(id) }
+            urgentPost={ () => urgentPost(id) }
+            setNewTitle={ () => setNewTitle(id) } />
     });
 
     return (
         <div className={classes.root}>
             <List component="nav" className={classes.padding}>
-                {postsArray}
+                { postsArray }
             </List>
         </div>
     );

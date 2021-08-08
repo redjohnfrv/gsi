@@ -91,47 +91,62 @@
 
 .subinfo {
   height: calc(100% - 55px);
-  width: 100%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .priority {
-  max-width: 65%;
-  width: max-content;
+  width: 100%;
   padding-left: 25px;
 }
 .priority__content {
   display: flex;
   position: relative;
+  align-items: flex-start;
 }
 .priority__text {
   margin-right: 15px;
   margin-bottom: 10px;
+  padding-right: 30px;
   font-size: 22px;
   line-height: 28px;
   color: #005161;
+  overflow-x: scroll;
+  text-overflow: ellipsis;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.priority__text::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 .priority__mark {
-  position: absolute;
+  position: relative;
   top: -10px;
-  left: 100%;
   width: 50px;
   height: 50px;
   animation: 10s linear spin infinite;
 }
 @keyframes spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0turn);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
 .priority__mark img {
-  width: 100%;
-  height: auto;
+  width: 50px;
+  height: 50px;
 }
 
 /*# sourceMappingURL=header.css.map */

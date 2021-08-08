@@ -9,8 +9,15 @@ svg.star {
 }
 
 .text span {
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   font-size: 1.1rem;
   color: #343434;
+}
+.text span::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .delete {
@@ -24,6 +31,10 @@ svg.star {
 
 .post:hover {
   background-color: #dae7ee;
+}
+
+.arrow {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=post.css.map */

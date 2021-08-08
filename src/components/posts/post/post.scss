@@ -11,6 +11,14 @@ svg.star {
 }
 
 .text span{
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
   font-size: 1.1rem;
   color: #343434;
 }
@@ -26,4 +34,8 @@ svg.star {
 
 .post:hover {
   background-color: $hover-bg;
+}
+
+.arrow {
+  cursor: pointer;
 }

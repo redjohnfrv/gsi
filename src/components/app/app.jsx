@@ -14,6 +14,7 @@ export function App() {
     const [value, setValue] = useState('');
     const [urgents, setUrgents] = useState(0);
     const [tasks, setTasks] = useState(0);
+    const [title, setTitle] = useState('No priority task assigned...')
 
     //COUNT TASKS
     useEffect(() => {
@@ -23,7 +24,7 @@ export function App() {
     //DELETE CURRENT POST
     const deletePost = id => {
         const newData = [...cloneData];
-        const index = cloneData.findIndex(elem => elem.id === id);
+        const index = newData.findIndex(elem => elem.id === id);
         newData.splice(index, 1)
         setCloneData(newData)
     };
@@ -51,16 +52,24 @@ export function App() {
         setCloneData(newData)
     };
 
+    //SET TASK AS A TITLE
+    const setNewTitle = (id) => {
+        const index = cloneData.findIndex(elem => elem.id === id);
+        setTitle(cloneData[index].label)
+    }
+
     return (
         <Container maxWidth="md">
             <Header
                 urgents={ urgents }
-                tasks={ tasks } />
+                tasks={ tasks }
+                title={ title }/>
             <Filter />
             <Posts
-                posts={cloneData}
+                posts={ cloneData }
                 deletePost={ deletePost }
-                urgentPost={ urgentPost } />
+                urgentPost={ urgentPost }
+                setNewTitle={ setNewTitle } />
             <AddPost
                 addPost={ addPost }
                 inputChange={ inputChange }
