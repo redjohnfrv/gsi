@@ -10,14 +10,13 @@ import state from './../../state/state';
 export function App() {
 
     let data = state;
-
     let [cloneData, setCloneData] = useState(data);
 
     const deletePost = id => {
-        data = [...cloneData];
+        const newData = [...cloneData]
         const index = cloneData.findIndex(elem => elem.id === id);
-        data.splice(index, 1)
-        setCloneData(data)
+        newData.splice(index, 1)
+        setCloneData(newData)
     };
 
     return (
