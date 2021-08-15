@@ -11,17 +11,22 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export function Search() {
+export function Search( { searchValue, changeSearchValue, searchPosts }) {
     const classes = useStyles();
 
     return (
         <div className="search">
-            <form className={classes.root} noValidate autoComplete="off">
+            <form
+                className={classes.root}
+                noValidate autoComplete="off"
+                onSubmit={ (e) => searchPosts(e) }>
                 <TextField
                     id="standard-basic"
                     label="Let's find something..."
                     className="search__textFiled"
-                />
+                    value={ searchValue }
+                    onChange={ changeSearchValue }
+                    />
             </form>
         </div>
     );
