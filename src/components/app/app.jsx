@@ -11,6 +11,7 @@ export function App() {
 
     const data = state;
     const [cloneData, setCloneData] = useState(data);
+    const [filterData, setFilterData] = useState(null)
     const [value, setValue] = useState('');
     const [urgents, setUrgents] = useState(0);
     const [tasks, setTasks] = useState(0);
@@ -27,12 +28,14 @@ export function App() {
         const index = newData.findIndex(elem => elem.id === id);
         newData.splice(index, 1)
         setCloneData(newData)
+        setFilterData(newData)
     };
 
     //PUSH NEW POST
     const addPost = value => {
         const newData = [...cloneData, {id: Math.random(), label: value, important: false}];
         setCloneData(newData)
+        setFilterData(newData)
         setValue('')
     };
 
@@ -50,6 +53,7 @@ export function App() {
             item.important ? setUrgents(counter += 1) : setUrgents(counter)
         })
         setCloneData(newData)
+        setFilterData(newData)
     };
 
     //SET TASK AS A TITLE
@@ -60,11 +64,12 @@ export function App() {
 
     //FILTER
     const filterUrgent = () => {
+        setFilterData(cloneData)
         const newData = cloneData.filter(item => item.important)
         setCloneData(newData)
     }
     const filterAll = () => {
-        setCloneData(data)
+        setCloneData(filterData)
     }
 
     return (

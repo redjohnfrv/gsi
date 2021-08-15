@@ -18,9 +18,18 @@ export function AddPost( {addPost, inputChange, value} ) {
     const classes = useStyles();
     const btnTitle = 'New post'
 
+    const onSubmit = (e) => {
+        e.preventDefault()
+        addPost(value)
+    }
+
     return (
         <div className="add">
-            <form className={classes.root} noValidate autoComplete="off">
+            <form
+                className={classes.root}
+                noValidate
+                autoComplete="off"
+                onSubmit={ (e) => onSubmit(e) }>
                 <Input
                     placeholder="Write your task..."
                     inputProps={{ 'aria-label': 'description' }}
@@ -30,7 +39,7 @@ export function AddPost( {addPost, inputChange, value} ) {
                     className="add__btn"
                     variant="contained"
                     color="primary"
-                    onClick={ () => addPost(value) }>
+                    type="submit">
 
                     { btnTitle }
                 </Button>
