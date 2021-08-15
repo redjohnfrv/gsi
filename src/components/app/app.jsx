@@ -58,13 +58,24 @@ export function App() {
         setTitle(cloneData[index].label)
     }
 
+    //FILTER
+    const filterUrgent = () => {
+        const newData = cloneData.filter(item => item.important)
+        setCloneData(newData)
+    }
+    const filterAll = () => {
+        setCloneData(data)
+    }
+
     return (
         <Container maxWidth="md">
             <Header
                 urgents={ urgents }
                 tasks={ tasks }
                 title={ title }/>
-            <Filter />
+            <Filter
+                filterUrgent={ filterUrgent }
+                filterAll={ filterAll }/>
             <Posts
                 posts={ cloneData }
                 deletePost={ deletePost }
