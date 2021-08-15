@@ -13,7 +13,6 @@ export function App() {
     const [bufferData, setBufferData] = useState(data);
     const [cloneData, setCloneData] = useState(data);
 
-    const [filterData, setFilterData] = useState(null);
     const [searchValue, setSearchValue] = useState('');
     const [value, setValue] = useState('');
     const [urgents, setUrgents] = useState(0);
